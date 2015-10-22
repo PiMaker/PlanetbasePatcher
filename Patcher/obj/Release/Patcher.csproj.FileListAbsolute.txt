@@ -1,0 +1,14 @@
+C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\bin\Release\Patcher.exe.config
+C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\bin\Release\Patcher.exe
+C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\bin\Release\Patcher.pdb
+C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\obj\Release\MainWindow.g.cs
+C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\obj\Release\App.g.cs
+C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\obj\Release\Patcher_MarkupCompile.cache
+C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\obj\Release\Patcher_MarkupCompile.lref
+C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\obj\Release\MainWindow.baml
+C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\obj\Release\Patcher.g.resources
+C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\obj\Release\Patcher.Properties.Resources.resources
+C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\obj\Release\Patcher.csproj.GenerateResource.Cache
+C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\obj\Release\Patcher.exe
+C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\obj\Release\Patcher.pdb
+C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\obj\Release\Patcher.csprojResolveAssemblyReference.cache

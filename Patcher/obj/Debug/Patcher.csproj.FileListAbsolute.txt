@@ -1,0 +1,14 @@
+C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\bin\Debug\Patcher.exe.config
+C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\bin\Debug\Patcher.exe
+C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\bin\Debug\Patcher.pdb
+C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\obj\Debug\Patcher.csprojResolveAssemblyReference.cache
+C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\obj\Debug\MainWindow.g.cs
+C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\obj\Debug\App.g.cs
+C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\obj\Debug\Patcher_MarkupCompile.cache
+C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\obj\Debug\Patcher_MarkupCompile.lref
+C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\obj\Debug\MainWindow.baml
+C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\obj\Debug\Patcher.g.resources
+C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\obj\Debug\Patcher.Properties.Resources.resources
+C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\obj\Debug\Patcher.csproj.GenerateResource.Cache
+C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\obj\Debug\Patcher.exe
+C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\obj\Debug\Patcher.pdb
