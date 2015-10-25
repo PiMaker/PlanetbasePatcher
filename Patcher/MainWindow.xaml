@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Patcher"
         mc:Ignorable="d"
-        Title="Planetbase Mod Patcher" Height="122.631" Width="229.389" ResizeMode="CanMinimize">
+        Title="Planetbase Mod Patcher" Height="143.631" Width="229.389" ResizeMode="CanMinimize">
     <Grid>
         <Button x:Name="buttonSelect" Content="Select Assembly-CSharp.dll" HorizontalAlignment="Left" VerticalAlignment="Top" Width="195" Margin="10,10,0,0" Click="ButtonBase_OnClick"/>
         <TextBlock x:Name="labelDll" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="210,7,0,0" Text="" SizeChanged="FrameworkElement_OnSizeChanged"/>
         <Button x:Name="buttonPatch" IsEnabled="False" Content="Patch!" HorizontalAlignment="Left" VerticalAlignment="Top" Width="195" Margin="10,34,0,0" Click="ButtonBase2_OnClick"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="v1.0 by π-Maker" VerticalAlignment="Top" Margin="10,62,0,0"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="v1.1 by π-Maker" VerticalAlignment="Top" Margin="10,84,0,0"/>
+        <Button x:Name="buttonRestore" IsEnabled="False" Content="State: Unknown" HorizontalAlignment="Left" VerticalAlignment="Top" Width="195" Margin="10,59,0,0" Click="ButtonBase3_OnClick"/>
     </Grid>
 </Window>

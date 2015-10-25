@@ -11,4 +11,3 @@ C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\obj\Release\Patcher.Prope
 C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\obj\Release\Patcher.csproj.GenerateResource.Cache
 C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\obj\Release\Patcher.exe
 C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\obj\Release\Patcher.pdb
-C:\Users\Pi\Desktop\Planetbase Modding\Patcher\Patcher\obj\Release\Patcher.csprojResolveAssemblyReference.cache

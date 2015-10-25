@@ -104,11 +104,23 @@
     IL_00ef:  ret
   }";
 
-        public const string MLFUNCS = @"  .method public hidebysig
-    instance void ML_loadMods () cil managed 
+        public const string MLIMOD = @".class interface public auto ansi abstract Planetbase.IMod
+{
+	.method public hidebysig newslot abstract virtual 
+		instance void Init () cil managed 
+	{
+	}
+	.method public hidebysig newslot abstract virtual 
+		instance void Update () cil managed 
+	{
+	}
+}";
+
+        public const string MLFUNCS = @"  .method public hidebysig 
+	instance void ML_loadMods () cil managed 
   {
-	// Method begins at RVA 0x30514
-	// Code size 179 (0xb3)
+	// Method begins at RVA 0x308e4
+	// Code size 242 (0xf2)
 	.maxstack 3
 	.locals init (
 		[0] class [mscorlib]System.Collections.Generic.Dictionary`2<object, class [mscorlib]System.Reflection.MethodInfo>,
@@ -116,11 +128,14 @@
 		[2] string[],
 		[3] int32,
 		[4] string,
-		[5] string,
-		[6] class [mscorlib]System.Reflection.Assembly,
+		[5] class [mscorlib]System.Reflection.Assembly,
+		[6] class [mscorlib]System.Type[],
 		[7] class [mscorlib]System.Type,
 		[8] object,
-		[9] class [mscorlib]System.Reflection.MethodInfo
+		[9] class [mscorlib]System.Reflection.MethodInfo,
+		[10] class [mscorlib]System.Exception,
+		[11] class [mscorlib]System.Type[],
+		[12] int32
 	)
 
 	IL_0000: newobj instance void class [mscorlib]System.Collections.Generic.Dictionary`2<object, class [mscorlib]System.Reflection.MethodInfo>::.ctor()
@@ -133,7 +148,7 @@
     IL_001f: stloc.1
 	IL_0020: ldloc.1
 	IL_0021: call bool[mscorlib] System.IO.Directory::Exists(string)
-    IL_0026: brfalse IL_00ac
+    IL_0026: brfalse IL_00eb
 
     IL_002b: ldloc.1
 	IL_002c: ldstr " + "\"*.dll\"" + @"
@@ -141,58 +156,95 @@
     IL_0036: stloc.2
 	IL_0037: ldc.i4.0
 	IL_0038: stloc.3
-	IL_0039: br.s IL_00a6
-    // loop start (head: IL_00a6)
-        IL_003b: ldloc.2
-		IL_003c: ldloc.3
-		IL_003d: ldelem.ref
-		IL_003e: stloc.s 4
-		IL_0040: ldloc.s 4
-		IL_0042: call string[mscorlib] System.IO.Path::GetFileNameWithoutExtension(string)
-        IL_0047: stloc.s 5
-		IL_0049: ldloc.s 4
-		IL_004b: call uint8[] [mscorlib]System.IO.File::ReadAllBytes(string)
-		IL_0050: call class [mscorlib]System.Reflection.Assembly[mscorlib] System.Reflection.Assembly::Load(uint8[])
-        IL_0055: stloc.s 6
-		IL_0057: ldloc.s 6
-		IL_0059: ldloc.s 5
-		IL_005b: ldstr " + "\".Mod\"" + @"
-		IL_0060: call string[mscorlib] System.String::Concat(string, string)
-        IL_0065: callvirt instance class [mscorlib]System.Type[mscorlib] System.Reflection.Assembly::GetType(string)
-        IL_006a: stloc.s 7
-		IL_006c: ldloc.s 7
-		IL_006e: call object[mscorlib] System.Activator::CreateInstance(class [mscorlib]System.Type)
-		IL_0073: stloc.s 8
-		IL_0075: ldloc.s 7
-		IL_0077: ldstr " + "\"Init\"" + @"
-		IL_007c: callvirt instance class [mscorlib]System.Reflection.MethodInfo[mscorlib] System.Type::GetMethod(string)
-        IL_0081: ldloc.s 8
-		IL_0083: ldnull
-        IL_0084: callvirt instance object[mscorlib] System.Reflection.MethodBase::Invoke(object, object[])
-        IL_0089: pop
-        IL_008a: ldloc.s 7
-		IL_008c: ldstr " + "\"Update\"" + @"
-		IL_0091: callvirt instance class [mscorlib]System.Reflection.MethodInfo[mscorlib] System.Type::GetMethod(string)
-        IL_0096: stloc.s 9
-		IL_0098: ldloc.0
-		IL_0099: ldloc.s 8
-		IL_009b: ldloc.s 9
-		IL_009d: callvirt instance void class [mscorlib]System.Collections.Generic.Dictionary`2<object, class [mscorlib]System.Reflection.MethodInfo>::Add(!0, !1)
-        IL_00a2: ldloc.3
-		IL_00a3: ldc.i4.1
-		IL_00a4: add
-        IL_00a5: stloc.3
+	IL_0039: br IL_00e2
+    // loop start (head: IL_00e2)
+        IL_003e: ldloc.2
+		IL_003f: ldloc.3
+		IL_0040: ldelem.ref
+		IL_0041: stloc.s 4
+		IL_0043: ldloc.s 4
+		IL_0045: call class [mscorlib]System.Reflection.Assembly[mscorlib] System.Reflection.Assembly::LoadFile(string)
+        IL_004a: stloc.s 5
+		IL_004c: ldloc.s 5
+		IL_004e: callvirt instance class [mscorlib]System.Type[][mscorlib] System.Reflection.Assembly::GetTypes()
+        IL_0053: stloc.s 6
+		IL_0055: ldloc.s 6
+		IL_0057: stloc.s 11
+		IL_0059: ldc.i4.0
+		IL_005a: stloc.s 12
+		IL_005c: br.s IL_00d6
+        // loop start (head: IL_00d6)
+        IL_005e: ldloc.s 11
+			IL_0060: ldloc.s 12
+			IL_0062: ldelem.ref
+			IL_0063: stloc.s 7
+			IL_0065: ldtoken['Assembly-CSharp'] Planetbase.IMod
+            IL_006a: call class [mscorlib]System.Type[mscorlib] System.Type::GetTypeFromHandle(valuetype[mscorlib] System.RuntimeTypeHandle)
+            IL_006f: ldloc.s 7
+			IL_0071: callvirt instance bool[mscorlib] System.Type::IsAssignableFrom(class [mscorlib]System.Type)
+			IL_0076: brfalse.s IL_00d0
+            .try
+            {
+            IL_0078: ldloc.s 7
+                IL_007a: call object[mscorlib] System.Activator::CreateInstance(class [mscorlib]System.Type)
+				IL_007f: stloc.s 8
+				IL_0081: ldloc.s 7
+				IL_0083: ldstr " + "\"Init\"" + @"
+				IL_0088: callvirt instance class [mscorlib]System.Reflection.MethodInfo[mscorlib] System.Type::GetMethod(string)
+                IL_008d: ldloc.s 8
+				IL_008f: ldnull
+                IL_0090: callvirt instance object[mscorlib] System.Reflection.MethodBase::Invoke(object, object[])
+                IL_0095: pop
+                IL_0096: ldloc.s 7
+				IL_0098: ldstr " + "\"Update\"" + @"
+				IL_009d: callvirt instance class [mscorlib]System.Reflection.MethodInfo[mscorlib] System.Type::GetMethod(string)
+                IL_00a2: stloc.s 9
+				IL_00a4: ldloc.0
+				IL_00a5: ldloc.s 8
+				IL_00a7: ldloc.s 9
+				IL_00a9: callvirt instance void class [mscorlib]System.Collections.Generic.Dictionary`2<object, class [mscorlib]System.Reflection.MethodInfo>::Add(!0, !1)
+                IL_00ae: leave.s IL_00d0
+            } // end .try
+			catch [mscorlib]System.Exception
+			{
+				IL_00b0: stloc.s 10
+				IL_00b2: ldloc.s 10
+				IL_00b4: callvirt instance string[mscorlib] System.Exception::get_Message()
+                IL_00b9: ldstr " + "\": Failed to load type: \"" + @"
+				IL_00be: ldloc.s 7
+				IL_00c0: callvirt instance string[mscorlib] System.Type::get_FullName()
+                IL_00c5: call string[mscorlib] System.String::Concat(string, string, string)
+                IL_00ca: newobj instance void[mscorlib]System.Exception::.ctor(string)
+				IL_00cf: throw
+			} // end handler
 
-		IL_00a6: ldloc.3
-		IL_00a7: ldloc.2
-		IL_00a8: ldlen
-        IL_00a9: conv.i4
-        IL_00aa: blt.s IL_003b
+IL_00d0: ldloc.s 12
+			IL_00d2: ldc.i4.1
+			IL_00d3: add
+            IL_00d4: stloc.s 12
+
+			IL_00d6: ldloc.s 12
+			IL_00d8: ldloc.s 11
+			IL_00da: ldlen
+            IL_00db: conv.i4
+            IL_00dc: blt.s IL_005e
+        // end loop
+
+IL_00de: ldloc.3
+		IL_00df: ldc.i4.1
+		IL_00e0: add
+        IL_00e1: stloc.3
+
+		IL_00e2: ldloc.3
+		IL_00e3: ldloc.2
+		IL_00e4: ldlen
+        IL_00e5: conv.i4
+        IL_00e6: blt IL_003e
     // end loop
 
-    IL_00ac: ldloc.0
-	IL_00ad: stsfld object Planetbase.GameManager::ML_modList
-    IL_00b2: ret
+IL_00eb: ldloc.0
+	IL_00ec: stsfld object Planetbase.GameManager::ML_modList
+    IL_00f1: ret
   }
 
   .method public hidebysig instance void
@@ -261,7 +313,16 @@
             {
                 this.labelDll.Text = ofd.FileName;
                 this.FrameworkElement_OnSizeChanged(this, null);
-                this.buttonPatch.IsEnabled = true;
+                if (File.Exists(this.labelDll.Text + ".bck"))
+                {
+                    this.buttonRestore.Content = "State: Patched! Click to restore!";
+                    this.buttonRestore.IsEnabled = true;
+                }
+                else
+                {
+                    this.buttonRestore.Content = "State: Probably Unpatched";
+                    this.buttonPatch.IsEnabled = true;
+                }
             }
         }
 
@@ -279,6 +340,7 @@
 
             this.buttonSelect.IsEnabled = false;
             this.buttonPatch.IsEnabled = false;
+            this.buttonRestore.IsEnabled = false;
 
             this.buttonPatch.Content = "Copying working DLL...";
 
@@ -342,8 +404,20 @@
                 {
                     var line = await reader.ReadLineAsync();
 
+                    if (line.Contains("ldstr") && line.Contains("\"1."))
+                    {
+                        line = line.Substring(0, line.Length - 1) + " - PiPatcher v1.1\"";
+                    }
+
+                    if (line.Contains(".field public static literal string VersionNumber = \"1."))
+                    {
+                        line = line.Substring(0, line.Length - 1) + " - PiPatcher v1.1\"";
+                    }
+
                     if (line.Contains(".class public auto ansi beforefieldinit Planetbase.GameManager"))
                     {
+                        await writer.WriteLineAsync(MainWindow.MLIMOD);
+
                         inGameManagerClass = true;
                         goto ContinueWithWrite;
                     }
@@ -489,6 +563,15 @@
                     });
 
             this.buttonPatch.Content = "Done!";
+        }
+
+        private void ButtonBase3_OnClick(object sender, RoutedEventArgs e)
+        {
+            File.Delete(this.labelDll.Text);
+            File.Move(this.labelDll.Text + ".bck", this.labelDll.Text);
+            this.buttonRestore.Content = "State: Restored to original";
+            this.buttonPatch.IsEnabled = true;
+            this.buttonRestore.IsEnabled = false;
         }
     }
 }
